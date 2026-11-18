@@ -351,7 +351,10 @@ footer{padding:28px 16px 60px;text-align:center;font-size:13.5px;color:var(--ink
   // ---- Défilement par étapes : un geste (molette, pavé tactile, doigt, clavier) = un assemblage joué comme un plan de film ----
   // Étape k : on glisse jusqu'au chapitre k et la vidéo se joue de STOPS[k-1] à STOPS[k]. Après le canapé fini, défilement normal.
   var STEPS = ['hero', 'bois', 'forme', 'sangles', 'garniture', 'tissu', 'fini'];
-  var STOPS = [0, 0.25, 0.41, 0.54, 0.72, 0.87, 1];
+  // Arrêts choisis image par image (sur 240) : chaque étape s'arrête sur une image nette, rien en vol.
+  // 56 pièces au sol juste avant l envol · 85 piètement seul · 112 arceaux et dossier posés · 116 sangles et toile de jute qui arrive
+  // 186 mousse, crin et ouate · 208 tissu tendu · 240 canapé fini avec traversin et coussins
+  var STOPS = [56, 85, 112, 116, 186, 208, 240].map(function (f) { return f / 240; });
   var LAST = STEPS.length - 1, snapOn = !reduce, step = 0, vNow = 0, vAnim = null, sAnim = null, ours = false, busyUntil = 0;
   var ess = document.getElementById('essentiel');
   function stepTop(k) { return k === 0 ? 0 : document.getElementById(STEPS[k]).offsetTop; }
@@ -494,7 +497,7 @@ footer{padding:28px 16px 60px;text-align:center;font-size:13.5px;color:var(--ink
 
     // Chaque chapitre est calé sur son moment de la vidéo (0 = début, 1 = canapé fini).
     // Plan 1 : carcasse 0–5 s, arceaux et dossier 5–8 s, sangles et toile 8–10 s ; plan 2 : mousse, crin, ouate 11–15 s, tissu 15–18 s, coussins 18–19 s.
-    var KEYS = [['hero', 0, 0], ['bois', 0, 0.02], ['forme', 0, 0.25], ['sangles', 0, 0.41], ['garniture', 0, 0.54], ['tissu', 0, 0.72], ['fini', 0, 0.87], ['fini', 0.4, 1]];
+    var KEYS = [['hero', 0, 0.233], ['bois', 0, 0.233], ['forme', 0, 0.35], ['sangles', 0, 0.467], ['garniture', 0, 0.5], ['tissu', 0, 0.775], ['fini', 0, 0.867], ['fini', 0.4, 1]];
     function videoAt(y) {
       if (!pts) pts = KEYS.map(function (k) { var el = document.getElementById(k[0]); return [el.offsetTop + el.offsetHeight * k[1] - (k[1] ? 0 : innerHeight * 0.35), k[2]]; });
       pts[0][0] = 0;
