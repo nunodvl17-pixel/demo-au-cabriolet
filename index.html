@@ -201,54 +201,47 @@ footer{padding:28px 16px 60px;text-align:center;font-size:13.5px;color:var(--ink
     </div>
   </section>
 
-  <section class="ch" id="bois" style="--h:190">
+  <section class="ch" id="bois" style="--h:150">
     <div class="stick"><div class="panel">
       <p class="step"><b>1</b>La carcasse</p>
       <h2>Tout commence par <em>le bois.</em></h2>
-      <p>Traverses chevillées et collées, cales d'angle vissées, piètement ajusté&nbsp;: une structure saine, vérifiée pièce par pièce, pour des dizaines d'années.</p>
+      <p>Le socle est monté en premier&nbsp;: traverses chevillées et collées, cales d'angle vissées, piètement ajusté. Une structure saine, vérifiée pièce par pièce, pour des dizaines d'années.</p>
     </div></div>
   </section>
 
-  <section class="ch right" id="forme" style="--h:140">
+  <section class="ch right" id="forme" style="--h:150">
     <div class="stick"><div class="panel">
       <p class="step"><b>2</b>La forme</p>
       <h2>Le dossier prend <em>sa courbe.</em></h2>
-      <p>Les arceaux cintrés et le dossier en noyer dessinent la silhouette du canapé. C'est elle qui guidera chaque couche de garniture.</p>
+      <p>Les arceaux cintrés et le dossier dessinent la silhouette du canapé, puis les sangles sont tendues et croisées sous l'assise.</p>
+      <span class="mat">Arceaux</span><span class="mat">Sangles</span>
     </div></div>
   </section>
 
-  <section class="ch" id="sangles" style="--h:120">
+  <section class="ch" id="mousse" style="--h:150">
     <div class="stick"><div class="panel">
-      <p class="step"><b>3</b>Les sangles</p>
-      <h2>Tendues, croisées, <em>fixées.</em></h2>
-      <p>Des sangles de jute tendues et croisées sous l'assise, puis une toile de jute par-dessus&nbsp;: la base de tout le confort.</p>
-      <span class="mat">Jute</span><span class="mat">Sangles élastiques</span>
+      <p class="step"><b>3</b>La mousse</p>
+      <h2>L'assise prend <em>du corps.</em></h2>
+      <p>Une toile de jute tendue sur les sangles, puis la mousse, découpée sur mesure, qui épouse chaque courbe du siège.</p>
+      <span class="mat">Jute</span><span class="mat">Mousse HR</span>
     </div></div>
   </section>
 
-  <section class="ch right" id="garniture" style="--h:200">
+  <section class="ch right" id="garniture" style="--h:150">
     <div class="stick"><div class="panel">
-      <p class="step"><b>4</b>La garniture</p>
-      <h2>Mousse, crin, <em>ouate.</em></h2>
-      <p>La mousse épouse les courbes, le crin apporte le moelleux, la ouate adoucit le tout. C'est ici que se joue le confort de votre assise.</p>
-      <span class="mat">Mousse HR</span><span class="mat">Crin</span><span class="mat">Ouate</span>
+      <p class="step"><b>4</b>Crin et ouate</p>
+      <h2>Le moelleux, <em>couche par couche.</em></h2>
+      <p>Le crin apporte le moelleux et la tenue, la ouate adoucit le tout et prépare la pose du tissu. C'est ici que se joue le confort de votre assise.</p>
+      <span class="mat">Crin</span><span class="mat">Ouate</span>
     </div></div>
   </section>
 
-  <section class="ch" id="tissu" style="--h:150">
+  <section class="ch" id="fini" style="--h:160">
     <div class="stick"><div class="panel">
       <p class="step"><b>5</b>Le tissu</p>
-      <h2>Tendu sans <em>un pli.</em></h2>
-      <p>Le tissu choisi à l'atelier, parmi les collections des grands éditeurs, est posé, tendu et passepoilé à la main, puis viennent le traversin et les coussins.</p>
+      <h2>Tendu sans un pli, <em>comme neuf.</em></h2>
+      <p>Le tissu choisi à l'atelier, parmi les collections des grands éditeurs, est posé, tendu et passepoilé à la main, puis viennent le traversin et les coussins. Devis et déplacement gratuits dans tout Paris.</p>
       <span class="mat">Velours</span><span class="mat">Lin</span><span class="mat">Soieries</span><span class="mat">Cuir</span>
-    </div></div>
-  </section>
-
-  <section class="ch right" id="fini" style="--h:150">
-    <div class="stick"><div class="panel">
-      <p class="step"><b>6</b>Le résultat</p>
-      <h2>Comme neuf, <em>et à votre goût.</em></h2>
-      <p>Travail traditionnel à l'ancienne, finitions soignées, délais respectés. Devis et déplacement gratuits dans tout Paris.</p>
       <div class="actions" style="justify-content:flex-start;margin-top:16px"><a class="pill pill-main" href="tel:+33142555333">Demander un devis</a></div>
     </div></div>
   </section>
@@ -350,11 +343,11 @@ footer{padding:28px 16px 60px;text-align:center;font-size:13.5px;color:var(--ink
 
   // ---- Défilement par étapes : un geste (molette, pavé tactile, doigt, clavier) = un assemblage joué comme un plan de film ----
   // Étape k : on glisse jusqu'au chapitre k et la vidéo se joue de STOPS[k-1] à STOPS[k]. Après le canapé fini, défilement normal.
-  var STEPS = ['hero', 'bois', 'forme', 'sangles', 'garniture', 'tissu', 'fini'];
+  var STEPS = ['hero', 'bois', 'forme', 'mousse', 'garniture', 'fini'];
   // Arrêts choisis image par image (sur 240) : chaque étape s'arrête sur une image nette, rien en vol.
-  // 56 pièces au sol juste avant l envol · 85 piètement seul · 112 arceaux et dossier posés · 116 sangles et toile de jute qui arrive
-  // 186 mousse, crin et ouate · 208 tissu tendu · 240 canapé fini avec traversin et coussins
-  var STOPS = [56, 85, 112, 116, 186, 208, 240].map(function (f) { return f / 240; });
+  // 0 toutes les pièces au sol (image haute qualité par-dessus) · 62 socle monté, le reste encore au sol
+  // 112 arceaux, dossier et sangles · 160 toute la mousse jaune · 186 crin et ouate · 240 tissu, traversin et coussins
+  var STOPS = [0, 62, 112, 160, 186, 240].map(function (f) { return f / 240; });
   var LAST = STEPS.length - 1, snapOn = !reduce, step = 0, vNow = 0, vAnim = null, sAnim = null, ours = false, busyUntil = 0;
   var ess = document.getElementById('essentiel');
   function stepTop(k) { return k === 0 ? 0 : document.getElementById(STEPS[k]).offsetTop; }
@@ -446,6 +439,10 @@ footer{padding:28px 16px 60px;text-align:center;font-size:13.5px;color:var(--ink
       im.src = url(i);
     }
     for (var k = 0; k < 4; k++) pump();
+    // Accueil : l'image de départ en haute qualité (même cadrage que l'image 0), fondue dans la vidéo dès que ça bouge
+    var hd = null, hdIm = new Image();
+    hdIm.onload = function () { (window.createImageBitmap ? createImageBitmap(hdIm) : Promise.resolve(hdIm)).then(function (b) { hd = b; dirty = true; }, function () { hd = hdIm; dirty = true; }); };
+    hdIm.src = BASE + 'depart-hd.jpg';
 
     var cw = 0, ch = 0, lastIdx = 0, fades = null, pts = null;
     function resize() {
@@ -484,6 +481,8 @@ footer{padding:28px 16px 60px;text-align:center;font-size:13.5px;color:var(--ink
       ctx.fillStyle = VID; ctx.fillRect(0, 0, cw, ch);
       ctx.globalAlpha = 1; ctx.drawImage(imgs[a], bx[0], bx[1], bx[2], bx[3]);
       if (b !== a) { var wgt = (pos - a) / (b - a); if (wgt > 0.004) { ctx.globalAlpha = wgt; ctx.drawImage(imgs[b], bx[0], bx[1], bx[2], bx[3]); } }
+      var hdA = hd ? 1 - pos / Math.max(1, (N - 1) * 0.02) : 0;   // s'efface sur les 2 premiers % du film
+      if (hdA > 0) { ctx.globalAlpha = Math.min(1, hdA); ctx.drawImage(hd, bx[0], bx[1], bx[2], bx[3]); }
       ctx.globalAlpha = 1;
       if (bx[1] > 0) { // bords haut et bas fondus dans le fond (téléphone)
         var f = bx[3] * 0.18;
@@ -497,7 +496,7 @@ footer{padding:28px 16px 60px;text-align:center;font-size:13.5px;color:var(--ink
 
     // Chaque chapitre est calé sur son moment de la vidéo (0 = début, 1 = canapé fini).
     // Plan 1 : carcasse 0–5 s, arceaux et dossier 5–8 s, sangles et toile 8–10 s ; plan 2 : mousse, crin, ouate 11–15 s, tissu 15–18 s, coussins 18–19 s.
-    var KEYS = [['hero', 0, 0.233], ['bois', 0, 0.233], ['forme', 0, 0.35], ['sangles', 0, 0.467], ['garniture', 0, 0.5], ['tissu', 0, 0.775], ['fini', 0, 0.867], ['fini', 0.4, 1]];
+    var KEYS = [['hero', 0, 0], ['bois', 0, 0.02], ['forme', 0, 0.26], ['mousse', 0, 0.47], ['garniture', 0, 0.67], ['fini', 0, 0.78], ['fini', 0.4, 1]];
     function videoAt(y) {
       if (!pts) pts = KEYS.map(function (k) { var el = document.getElementById(k[0]); return [el.offsetTop + el.offsetHeight * k[1] - (k[1] ? 0 : innerHeight * 0.35), k[2]]; });
       pts[0][0] = 0;
