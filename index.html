@@ -338,8 +338,8 @@ footer{padding:28px 16px 60px;text-align:center;font-size:13.5px;color:var(--ink
   // Arrêts choisis image par image (sur 240) : chaque étape s'arrête sur une image nette, rien en vol.
   // Vidéo video/etapes-plan1.mp4 (Veo, 15 s, 180 images) : arrêts sur ses pauses, trouvées par outils/trouver_pauses.py
   // 9 toutes les pièces au sol · 58 socle monté, le reste encore au sol · 113 arceaux, dossier et sangles
-  // 140 toute la mousse jaune · 173 crin puis tissu : canapé fini
-  var STOPS = [9, 58, 113, 140, 173].map(function (f) { return f / 179; });
+  // 142 toute la mousse jaune, oreillers posés (141-142 corrigées : crin effacé en haut, originaux dans video/originaux-corriges) · 173 crin puis tissu : canapé fini
+  var STOPS = [9, 58, 113, 142, 173].map(function (f) { return f / 179; });
   var LAST = STEPS.length - 1, snapOn = !reduce, step = 0, vNow = 0, vAnim = null, sAnim = null, ours = false, busyUntil = 0;
   var ess = document.getElementById('essentiel');
   function stepTop(k) { return k === 0 ? 0 : document.getElementById(STEPS[k]).offsetTop; }
